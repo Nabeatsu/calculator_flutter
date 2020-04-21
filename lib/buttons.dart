@@ -14,12 +14,15 @@ class MyButton extends StatelessWidget {
       onTap: buttonTapped,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
+        child: ClipOval(
           child: Container(
             color: color,
             child: Center(
-              child: Text(buttonText, style: TextStyle(color: textColor)),
+              child: Text(buttonText,
+                  style: TextStyle(
+                      color: textColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24.0)),
             ),
           ),
         ),

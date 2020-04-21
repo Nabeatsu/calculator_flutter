@@ -29,11 +29,11 @@ class _HomePageState extends State<HomePage> {
     // 1行目
     'C', 'DEL', '%', '/',
     // 2行目
-    '9', '8', '7', 'x',
+    '7', '8', '9', 'x',
     // 3行目
-    '6', '5', '4', '-',
+    '4', '5', '6', '-',
     // 4行目
-    '3', '2', '1', '+',
+    '1', '2', '3', '+',
     // 5行目
     '0', '.', 'ANS', '=',
   ];
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[100],
+      backgroundColor: Colors.black,
       body: Column(
         children: <Widget>[
           Expanded(
@@ -57,7 +57,10 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       userQuestion,
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   Container(
@@ -65,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.centerRight,
                     child: Text(
                       userAnswer,
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ],
@@ -123,11 +126,9 @@ class _HomePageState extends State<HomePage> {
                     return MyButton(
                       buttonText: buttons[index],
                       color: isOperator(buttons[index])
-                          ? Colors.deepPurple
-                          : Colors.deepPurple[50],
-                      textColor: isOperator(buttons[index])
-                          ? Colors.white
-                          : Colors.deepPurple,
+                          ? Color(0xFFed9828)
+                          : Color(0xFF292626),
+                      textColor: Colors.white,
                       buttonTapped: () {
                         setState(() {
                           userQuestion += buttons[index];
